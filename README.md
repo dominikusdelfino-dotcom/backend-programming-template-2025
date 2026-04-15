@@ -16,3 +16,37 @@
 2. Create a new folder in `./src/api/components` (if needed). Remember to separate your codes to repositories, services, controllers, and routes.
 3. Add the new route in `./src/api/routes.js`.
 4. Test your new endpoints in the API client app.
+
+## Gacha API Endpoints
+
+### 1. Main Endpoint: Play Gacha
+Melakukan undian gacha (Maksimal 5x sehari per user).
+- URL: `/api/gacha`
+- Method: `POST`
+- Body (`application/json`):
+  ```json
+  { "user_id": "<user_object_id_disini>" }
+
+### 2. Bonus: Get User Gacha History
+Melihat riwayat gacha user beserta hadiahnya.
+- URL: `/api/gacha/history?user_id=<user_object_id_disini>`
+- Method: `GET`
+- Body (`application/json`):
+  ```json
+  { "user_id": "<user_object_id_disini>" }
+
+### 3. Bonus: Get Remaining Prize Quotas
+Melihat sisa kuota masing-masing hadiah dalam 1 periode undian.
+- URL: `/api/gacha/quotas`
+- Method: `GET`
+- Body (`application/json`):
+  ```json
+  { "user_id": "<user_object_id_disini>" }
+
+### 4. Bonus: Get Winners List
+Melihat daftar pemenang (nama user disamarkan).
+- URL: `/api/gacha/winners`
+- Method: `GET`
+- Body (`application/json`):
+  ```json
+  { "user_id": "<user_object_id_disini>" }
